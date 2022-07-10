@@ -2,7 +2,7 @@
   "name": "beninedu",
   "version": "0.0.0",
   "scripts": {
-    "dev": "npm install && unset NODE_ENV && vite ",
+    "dev": "vite ",
     "build": "vite build",
     "preview": "npm install && vite preview --port 5050",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"

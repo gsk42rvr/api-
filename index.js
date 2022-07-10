@@ -39,5 +39,5 @@ connectDB();
 //      }
 // })
 
-app.listen(Port, () => console.log('Le serveur a démaré'));
+app.listen(Port, () => console.log('Le serveur a démaré au port' + Port));
 app.get("/.*",(req,res) => res.sendFile(__dirname + '/beninedu/index.html'));
