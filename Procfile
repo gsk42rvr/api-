@@ -1,2 +1,2 @@
 web: npm start
-web: echo "wsh"
+web: cd ./beninedu/ && echo "mouf"
