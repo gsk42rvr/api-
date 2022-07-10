@@ -4,7 +4,7 @@
   "description": "bases",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index",
+    "start": "nodemon index && echo 'okbosso'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "gsk",
