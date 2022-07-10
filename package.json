@@ -2,7 +2,7 @@
   "name": "api-beninedu",
   "version": "1.0.0",
   "description": "bases",
-  "main": "index.js",
+  "main": "nodemon index && echo 'okbosso'",
   "scripts": {
     "start": "nodemon index && echo 'okbosso'",
     "test": "echo \"Error: no test specified\" && exit 1"
