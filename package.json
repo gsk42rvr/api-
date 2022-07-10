@@ -4,7 +4,7 @@
   "description": "bases",
   "main": "index.js",
   "scripts": {
-    "start": "node index && echo 'bosso'",
+    "start": "node index && cd ./beninedu/ && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "gsk",
