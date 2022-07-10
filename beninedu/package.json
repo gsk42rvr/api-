@@ -1,0 +1,42 @@
+{
+  "name": "beninedu",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5050",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fullcalendar/core": "^5.11.0",
+    "@fullcalendar/daygrid": "^5.11.0",
+    "@fullcalendar/interaction": "^5.11.0",
+    "@fullcalendar/vue3": "^5.11.1",
+    "axios": "^0.27.2",
+    "chart.js": "^3.8.0",
+    "dayjs": "^1.11.3",
+    "fullcalendar": "^5.11.0",
+    "git": "^0.1.5",
+    "jquerry": "^0.0.1-security",
+    "jquery": "^3.6.0",
+    "moment": "^2.29.3",
+    "mongoose": "^6.4.0",
+    "pinia": "^2.0.14",
+    "vue": "^3.2.33",
+    "vue-chartjs": "^4.1.1",
+    "vue-router": "^4.0.14",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "prettier": "^2.5.1",
+    "vite": "^2.9.5"
+  }
+}
