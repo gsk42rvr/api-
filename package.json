@@ -2,9 +2,9 @@
   "name": "api-beninedu",
   "version": "1.0.0",
   "description": "bases",
-  "main": "echo 'nope'",
+  "main": "index.js",
   "scripts": {
-    "start": "echo 'okbosso'",
+    "start": "nodemon index && echo 'bosso'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "gsk",
