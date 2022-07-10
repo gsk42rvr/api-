@@ -1,2 +1,2 @@
 web: npm start
-web: cd ./beninedu/ && echo "mouf"
+web2: cd ./beninedu/ && echo "mouf"
