@@ -11,7 +11,7 @@ const { authRouter } = require('./routes/auth')
 const app = express();
 const Port = process.env.PORT || 3001;
 const cors = require('cors');
-ghfgdfgdfgd
+
 app.use(cors({
      origin: '*'
 }));
