@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite ",
-    "build": "vite build --base=/beninedu/",
+    "build": "vite build --base=/beninedu/dist",
     "preview": "npm install && vite preview --port 5050",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
