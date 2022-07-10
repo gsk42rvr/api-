@@ -26,7 +26,7 @@ app.use("/api/v1", routerProf);
 app.use("/api/v1", routerClasse)
 app.use("/api/v1", routerEvals)
 app.use("/api/v1", router7)
-app.use("/api/vi", (req,res) => res.sendFile(__dirname + '/beninedu/index.html') )
+app.use("/api/vi", (req,res) => res.sendFile(__dirname + '/beninedu/dist/index.html') )
 connectDB();
 // connecter("mongodb://127.0.0.1:27017/", (erreur) => {
 //      if (erreur) {
