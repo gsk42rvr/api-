@@ -1,6 +1,13 @@
 const { MongoClient, Db } = require('mongodb')
+const mongoose = require('mongoose');
 var client = null;
 
+const URI = "mongodb+srv://yadrien5:Adrien2001%40@atlascluster.ehbag.mongodb.net/?retryWrites=true&w=majority";
+
+const connectDB = async () => {
+    await mongoose.connect(URI);
+    console.log('db connected..!');
+}
 function connecter(url,callback){
     if(client == null){
         client = new MongoClient(url);
@@ -29,4 +36,4 @@ function fermerConnexion(){
     }
 }
 
-module.exports = {connecter, bd, fermerConnexion}
+module.exports = {connecter, bd, fermerConnexion,connectDB}
