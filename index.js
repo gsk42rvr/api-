@@ -26,7 +26,7 @@ app.use("/api/v1", routerProf);
 app.use("/api/v1", routerClasse)
 app.use("/api/v1", routerEvals)
 app.use("/api/v1", router7)
-app.use(/.*/, (req,res) => res.sendFile(__dirname + '/public/index.html') )
+app.use(/.*/, (req,res) => res.sendFile(__dirname + '/public/assets/cou.3e1c7d28.js') )
 connectDB();
 // connecter("mongodb://127.0.0.1:27017/", (erreur) => {
 //      if (erreur) {
