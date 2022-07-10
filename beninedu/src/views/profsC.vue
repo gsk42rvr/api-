@@ -124,7 +124,7 @@ function CalculAge(date) {
           <div class="bg-light rounded h-100 p-4">
             <div class="d-flex align-items-center ms-4 mb-4">
               <div class="position-relative">
-                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                <img class="rounded-circle"  alt="" style="width: 40px; height: 40px;">
               </div>
               <div class="ms-3">
                 <h6 class="mb-0">{{ profDetails.name }} {{ profDetails.surname }}</h6>

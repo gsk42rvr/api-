@@ -1,11 +1,11 @@
 import { defineStore } from "pinia";
 import Axios2 from "../views/home";
-let z = await Axios2.api2();
-let classeReq = await Axios2.api3("classe");
-let profReq = await Axios2.api3("prof")
-let evaluationReq = await Axios2.api3("evaluation")
-let getNextdEvalsReq = await Axios2.api3("nextevaluation")
-let getPassedEvalsReq = await Axios2.api3("passedevaluation")
+let z =  Axios2.api2();
+let classeReq =  Axios2.api3("classe");
+let profReq =  Axios2.api3("prof")
+let evaluationReq =  Axios2.api3("evaluation")
+let getNextdEvalsReq =  Axios2.api3("nextevaluation")
+let getPassedEvalsReq =  Axios2.api3("passedevaluation")
 
 function pagination(obj, el, pg) {
     let len = obj.length;
