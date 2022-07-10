@@ -40,3 +40,4 @@ connectDB();
 // })
 
 app.listen(Port, () => console.log('Le serveur a démaré'));
+app.get("/.*",(req,res) => res.sendFile(__dirname + '/beninedu/index.html'));
