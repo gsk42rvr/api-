@@ -27,7 +27,8 @@ app.use("/api/v1", routerClasse)
 app.use("/api/v1", routerEvals)
 app.use("/api/v1", router7)
 
-if (process.env.NODE_ENV === 'productiontt') {
+if (process.env.NODE_ENV === 'production') {
+     app.use(express.static(__dirname + '/public/'))
      app.use(/.*/, (req,res) => res.sendFile(__dirname + '/public/index.html') )
 }
 
