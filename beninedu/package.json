@@ -2,7 +2,7 @@
   "name": "beninedu",
   "version": "0.0.0",
   "scripts": {
-    "dev": "echo 'gsk'",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 5050",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
