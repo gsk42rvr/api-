@@ -29,7 +29,7 @@ app.use("/api/v1", router7)
 
 if (process.env.NODE_ENV === 'production') {
      app.use(express.static(__dirname + '/public/'))
-     app.use(/.*/, (req,res) => res.sendFile(__dirname + '/public/index.html') )
+     app.get(/.*/, (req,res) => res.sendFile(__dirname + '/public/index.html') )
 }
 
 connectDB();
@@ -45,4 +45,3 @@ connectDB();
 // })
 
 app.listen(Port, () => console.log('Le serveur a démaré au port' + Port));
-app.get("/.*",(req,res) => res.sendFile(__dirname + '/index.html'));
