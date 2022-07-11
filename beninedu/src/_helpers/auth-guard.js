@@ -17,6 +17,7 @@ export async function authGuard(to,from,) {
     let token = localStorage.getItem('session_token')
     let token2 = true
     await req(token)
+    console.log(token,"token");
     if (token === true) {
         return true
     }
