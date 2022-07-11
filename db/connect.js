@@ -5,7 +5,7 @@ var client = null;
 const URI = "mongodb+srv://yadrien5:Adrien2001%40@atlascluster.ehbag.mongodb.net/?retryWrites=true&w=majority";
 
 const connectDB = async () => {
-    await mongoose.connect(URI);
+    client = await new MongoClient(URI);
     console.log('db connected..!');
 }
 function connecter(url,callback){
@@ -26,7 +26,7 @@ function connecter(url,callback){
 }
 
 function bd(){
-    return new Db(client, "gsk42");
+    return new Db(client, "GSK420");
 }
 
 function fermerConnexion(){
