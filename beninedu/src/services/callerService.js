@@ -3,7 +3,7 @@ import { useRouter } from 'vue-router'
 import router from '../router'
 const Axios = axios.create({
 
-    baseURL : 'http://localhost:3001'
+    baseURL : 'https://beninedu-app.herokuapp.com'
 })
 
 Axios.interceptors.response.use(response => {

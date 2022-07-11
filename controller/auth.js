@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt")
 const getAuthToken = async (req, res) => {
     try {
         let email = req.body.email
+        console.log(email);
         const user = await client.bd().collection("users").find({ email: email }).toArray()
         if (user.length === 0) {
             res.status(401).json({ msg: "email introuvable" })

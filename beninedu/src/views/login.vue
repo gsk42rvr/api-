@@ -10,6 +10,7 @@ async function Login(obj) {
         password: obj.password,
     }).then(async (res) => {
         if(res) {
+            console.log(res);
             localStorage.setItem('session_token', res.data.token);
             router.push('/')
         }
