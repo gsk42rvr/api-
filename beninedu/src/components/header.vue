@@ -35,7 +35,7 @@ var side = function () {
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <router-link class="nav-item nav-link dropdown-toggle active" to="/"><i class="fa fa-tachometer-alt me-2"></i>Acceuil</router-link>
+                    <router-link class="nav-item nav-link dropdown-toggle" to="/"><i class="fa fa-tachometer-alt me-2"></i>Acceuil</router-link>
                     <router-link class="nav-item nav-link" to="/eleves"><i class="fa fa-tachometer-alt me-2"></i>Gestion élèves</router-link>
                     <router-link class="nav-item nav-link" to="/classes"><i class="fa-solid fa-screen-users"></i>Classes</router-link>
                     <router-link class="nav-item nav-link" to="/profs"><i class="fa-solid fa-chalkboard-user"></i>Gestion profs</router-link>
