@@ -2,9 +2,11 @@
 import { onMounted, onUnmounted } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import { loadScript } from "vue-plugin-load-script";
+
 export default {
   name: 'app',
   beforeCreate() {
+    
     
     let externalScript = document.createElement('title')
     externalScript.setAttribute('src', 'src/assets/sneat/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')
