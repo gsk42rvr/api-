@@ -1,27 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css" integrity="sha512-OivR4OdSsE1onDm/i3J3Hpsm5GmOVvr9r49K3jJ0dnsxVzZgaOJ5MfxEAxCyGrzWozL9uJGKz6un3A7L+redIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<html lang="en" 
+class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="src/assets/sneat/assets/"
+  data-template="vertical-menu-template-free">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite Appp</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Sneat css -->
+  <link rel="stylesheet" href="./src/assets/sneat/assets/vendor/fonts/boxicons.css" />
+  <link rel="stylesheet" href="./src/assets/sneat/assets/vendor/libs/fullcalendar/typeahead.css">
+  <link rel="stylesheet" href="./src/assets/sneat/assets/vendor/libs/fullcalendar/responsive.bootstrap5.css">
+  <link rel="stylesheet" href="./src/assets/sneat/assets/vendor/libs/fullcalendar/datatables.bootstrap5.css">
+  <link rel="stylesheet" href="./src/assets/sneat/assets/vendor/libs/fullcalendar/core.css">
+  <link rel="stylesheet" href="./src/assets/sneat/assets/vendor/libs/fullcalendar/select2.css">
+  
+
+    <!-- Core CSS -->
+    
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css"
+    integrity="sha512-OivR4OdSsE1onDm/i3J3Hpsm5GmOVvr9r49K3jJ0dnsxVzZgaOJ5MfxEAxCyGrzWozL9uJGKz6un3A7L+redIQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  
+  <script src="./src/assets/sneat/assets/vendor/libs/jquery/jquery.js" type="module"></script>
+ 
+<script src="./src/assets/sneat/assets/vendor/libs/popper/popper.js" type="module"></script>
+<script src="./src/assets/sneat/assets/vendor/js/bootstrap.js" type="module"></script>
+
+
+<script src="./src/assets/sneat/assets/vendor/js/menu.js" type="module"></script>
+<!-- endbuild -->
+
+<!-- Vendors JS -->
+<script src="./src/assets/sneat/assets/vendor/libs/apex-charts/apexcharts.js" type="module"></script>
+<script src="./src/assets/sneat/assets/vendor/libs/fullcalendar/jquery.dataTables.js" type="module"></script>
+<script src="./src/assets/sneat/assets/vendor/libs/fullcalendar/datatables-bootsrtap.js" type="module"></script>
+<script src="./src/assets/sneat/assets/vendor/libs/fullcalendar/datatables.responsive.js" type="module"></script>
+<script src="./src/assets/sneat/assets/vendor/libs/fullcalendar/responsive.bootstrap5.js" type="module"></script>
+<script src="./src/assets/sneat/assets/vendor/libs/fullcalendar/app-invoice-list.js" type="module"></script>
+<script src="./src/assets/sneat/assets/vendor/libs/fullcalendar/main.js" type="module"></script>
+<script src="./src/assets/sneat/assets/vendor/libs/fullcalendar/typeahead.js" type="module"></script>
+<script src="./src/assets/sneat/assets/vendor/libs/fullcalendar/select2.js" type="module"></script>
+
+<!-- Main JS -->
+
+
+<!-- Page JS -->
+<script src="./src/assets/sneat/assets/js/dashboards-analytics.js" type="module"></script>
+<script src="./src/assets/sneat/assets/vendor/js/helpers.js" type="module"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="./src/assets/sneat/assets/js/config.js" type="module"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+
+
 </html>

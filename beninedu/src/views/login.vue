@@ -3,6 +3,8 @@ import { useRouter } from "vue-router";
 import Axios from "@/services/callerService.js";
 import { object } from "webidl-conversions";
 const router = useRouter();
+let layoutMenuEl5 = $('div')
+console.log(layoutMenuEl5);
 async function Login(obj) {
     console.log(obj);
     let resp = await Axios.post("/api/v1/getauthtoken", {
@@ -72,3 +74,8 @@ const getCreditentials = async function (event) {
         <!-- Sign Up End -->
     </div>
 </template>
+
+<style>
+@import "@/assets/css/style.css";
+@import "@/assets/css/bootstrap.min.css";
+</style>

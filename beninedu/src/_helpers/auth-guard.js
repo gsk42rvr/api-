@@ -5,6 +5,7 @@ let req = async  (token) => {
             headers : {token:token}
         })
         if (response.data == true) {
+            console.log(response.data,"resp");
             return response.data
         } else {
             return response
@@ -17,8 +18,4 @@ export async function authGuard(to,from,) {
     let token = localStorage.getItem('session_token')
     let token2 = true
     await req(token)
-    console.log(token,"token");
-    if (token === true) {
-        return true
-    }
 }

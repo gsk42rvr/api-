@@ -31,6 +31,6 @@ let gs
 </script>
 
 <template>
-<View><content></content></View>
+<View><RouterView></RouterView></View>
 
 </template>

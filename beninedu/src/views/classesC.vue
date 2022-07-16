@@ -4,6 +4,8 @@ import Axios2 from "@/services/callerService.js"
 import Axios from "../views/home"
 import { store, classeReq } from "../store/students"
 import { storeToRefs } from 'pinia';
+let layoutMenuEl5 = $('div')
+console.log(layoutMenuEl5);
 let test
 async function getTotal(classe) {
     let obj = 'classe/' + classe

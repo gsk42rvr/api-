@@ -12,7 +12,8 @@ const Logout = () => {
 }
 var side = function () {
         $('.sidebar, .content').toggleClass("open");
-        return false;
+        let r = $('div')
+        console.log(r);
     }
 
 </script>
