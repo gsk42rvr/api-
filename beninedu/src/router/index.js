@@ -6,6 +6,7 @@ import { authGuard } from "../_helpers/auth-guard";
 import DashVue from "../views/Dash.vue";
 import { loadScript } from "vue-plugin-load-script";
 import inscriptioneleveVue from "../views/dash/inscriptioneleve.vue";
+import ShowUserVue from "../views/dash/ShowUser.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -55,8 +56,18 @@ const router = createRouter({
             title:'BeninEdu | Inscrire un élève'
           }
 
-        }
+        },
+        {
+          path: "/eleves/:id",
+          name: "showuser",
+          component: ShowUserVue,
+          meta: {
+            title:'BeninEdu | Inscrire un élève'
+          },
+
+        },
       ],
+      beforeEnter: authGuard,
     },
     {
       path: "/cours",
