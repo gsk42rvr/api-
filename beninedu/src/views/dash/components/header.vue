@@ -9,15 +9,14 @@ const el = ref()
 
 onMounted(() => {
 
+    
 
     let menu, animate;
-    console.log('monté');
     (function () {
         // Initialize menu
         //----------------- 
-
+        
         let layoutMenuEl = document.querySelectorAll('#layout-menu');
-        console.log('affiche');
         layoutMenuEl.forEach(function (element) {
             menu = new Menu(element, {
                 orientation: 'vertical',
@@ -82,7 +81,6 @@ onMounted(() => {
 
         // Init BS Tooltip
         const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        console.log(tooltipTriggerList);
         tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl);
         });
@@ -127,6 +125,23 @@ onMounted(() => {
 
     (function () {
         let cardColor, headingColor, axisColor, shadeColor, borderColor;
+        let config = {
+  colors: {
+    primary: '#696cff',
+    secondary: '#8592a3',
+    success: '#71dd37',
+    info: '#03c3ec',
+    warning: '#ffab00',
+    danger: '#ff3e1d',
+    dark: '#233446',
+    black: '#000',
+    white: '#fff',
+    body: '#f4f5fb',
+    headingColor: '#566a7f',
+    axisColor: '#a1acb8',
+    borderColor: '#eceef1'
+  }
+};
 
         cardColor = config.colors.white;
         headingColor = config.colors.headingColor;
@@ -1195,10 +1210,7 @@ onMounted(() => {
     </div>
     <!-- / Layout wrapper -->
 
-    <div class="buy-now">
-        <a href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" target="_blank"
-            class="btn btn-danger btn-buy-now">Upgrade to Pro</a>
-    </div>
+
 
 
 

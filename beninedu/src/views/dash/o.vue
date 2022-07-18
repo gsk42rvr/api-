@@ -1,4 +1,5 @@
 <script setup>
+import Table from './components/table.vue';
 let date = new Date();
 </script>
 <template>
@@ -1091,5 +1092,5 @@ let date = new Date();
         </div>
     </div>
     
-    
+    <Table></Table>
 </template>

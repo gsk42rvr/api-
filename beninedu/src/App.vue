@@ -1,18 +1,9 @@
-<script >
+<script setup >
 import { onMounted, onUnmounted } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import { loadScript } from "vue-plugin-load-script";
 
-export default {
-  name: 'app',
-  beforeCreate() {
-    
-    
-    let externalScript = document.createElement('title')
-    externalScript.setAttribute('src', 'src/assets/sneat/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')
-    document.head.appendChild(externalScript)
-  }, 
-}      
+ let config = "yo"
 // var spinner = function () {
 //   setTimeout(function () {  
 //     if ($("#spinner").length > 0) { 
@@ -49,4 +40,8 @@ export default {
 @import "@/assets/sneat/assets/css/demo.css";
 @import "@/assets/sneat/assets/vendor/libs/apex-charts/apex-charts.css";
 @import "@/assets/sneat/assets/vendor/fonts/boxicons.css";
+@import "@/assets/sneat/assets/vendor/libs/fullcalendar/datatables.bootstrap5.css";
+@import "@/assets/sneat/assets/vendor/libs/fullcalendar/responsive.bootstrap5.css";
+
+
 </style>
