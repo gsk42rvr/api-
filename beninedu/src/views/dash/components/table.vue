@@ -1,13 +1,18 @@
 <script setup>
-import { reactive } from 'vue';
+import { reactive, unref, watch } from 'vue';
+import {store} from "../store/inscriptionTable"
+import {storeToRefs} from "pinia"
 
+const inscriptionTable = store();
+const {page, personData,returnDatas, maxpage, rows, search,onsearch,returnDatasG} = storeToRefs(inscriptionTable)
+const {loadTable, ppage, mpage,reloadTableDatas,navigate,toggleOnsearch} = inscriptionTable
 function sort (obj,input) {
     let inputS = input.toLowerCase()
     let dataArray = obj.filter(el => el.nom.toLowerCase().includes(inputS) || el.prenom.toLowerCase().includes(inputS)  )
     return dataArray
   }
 
-let personData = [
+let personDatas = [
     { nom: 'pierre', prenom: "jean", role: 'student', age: 9 },
     { nom: 'kpatchavi', prenom: "yoan", role: 'prof', age: 21 },
     { nom: 'Ngassam', prenom: "valerie", role: 'sur', age: 40 },
@@ -18,113 +23,28 @@ let personData = [
     { nom: 'Piru', prenom: "playbai", role: 'int', age: 25 },
     { nom: 'Ngassam', prenom: "valerie", role: 'sur', age: 40 },
     { nom: 'Piru', prenom: "playbai", role: 'int', age: 25 },
-    { nom: 'soockallingum', prenom: "margaux", role: 'pipe', age: 0 },
+    { nom: 'gsi', prenom: "r", role: 'ti', age: 0 },
     
 ]
-console.log(sort(personData,'pi'));
-let returnDatas = []
-let sortDirection = true;
-let page = 1
-let rows = 5
-let maxpage = 1
-let input = ""
-let onsearch = false
-let activetab 
-let search
-const state = reactive({
-    returnDatas,
-    sortDirection,
-    page,
-    rows,
-    maxpage,
-    onsearch,
-    input,
-    activetab : personData,
-    search
 
+inscriptionTable.$patch({
+      personData: personDatas
+    })
+loadTable(personData.value)
+inscriptionTable.$subscribe((mutation) => {
+    if(search.value != "" && onsearch.value === false) {
+        toggleOnsearch()
+        loadTable(personData.value)
+    }
+     if(onsearch.value === true && mutation.events.key == "search") {
+        if (search.value === "") {
+            toggleOnsearch()
+            loadTable(personData.value)
+        }else {
+            loadTable(personData.value)
+        }
+    }
 })
-
-const pagination = (personDatas, page, rows) => {
-    let trimStart = (page - 1) * rows
-    var trimEnd = trimStart + rows
-    let trimedData = personDatas.slice(trimStart, trimEnd)
-    return trimedData
-}
-
-const loadTableDatas = function (statePersonData) {
-    state.maxpage = Math.ceil(statePersonData.length / state.rows)
-    state.returnDatas = []
-    let rr =[]
-    let tmp = pagination(statePersonData, state.page, state.rows)
-    if (tmp.length <= 0) {
-        console.log('mof');
-        state.page = 1
-        tmp = pagination(statePersonData, state.page, state.rows)
-    }
-    if (tmp.length > state.rows) {
-        tmp = pagination(statePersonData, state.page, state.rows)
-    }
-    for (let person of tmp) {
-        rr.push(person)
-    }
-    state.returnDatas = rr
-
-    return state.returnDatas
-}
-
-let sortColumn = (columnName) => {
-    state.sortDirection = !state.sortDirection
-
-    sortNumberColumn(state.sortDirection, columnName)
-}
-const sortNumberColumn = (sort, columnName) => {
-    // state.personData = personData.sort((p1, p2) => {
-    //     return sort ? p1[columnName] - p2[columnName] : p2[columnName] - p1[columnName]
-    // })
-    state.returnDatas = []
-    loadTableDatas(personData)
-
-}
-const pagePlus = () => {
-
-    if (state.page < state.maxpage) {
-        state.page++
-        loadTableDatas(state.activetab)
-
-    } else {
-        return
-    }
-    // loadTableDatas(state.personData)
-
-}
-const reloadTableDatas = (newtab,rows) => {
-    state.rows = parseInt(rows)
-    loadTableDatas(newtab)
-
-}
-
-const reloadTableDatas2 = (input) => {
-    let newtab = sort(personData, input)
-    state.activetab = newtab
-    console.log(input,'input');
-    loadTableDatas(newtab)
-
-}
-const pageMinus = () => {
-    if (state.page <= 1) {
-        console.log(state.page);
-
-    } else {
-        state.page--
-        loadTableDatas(state.activetab)
-    }
-
-}
-const navigate = (page) => {
-    state.page = page
-    loadTableDatas(personData)
-}
-loadTableDatas(personData)
 </script>
 <template>
     <div class="card machin">
@@ -160,7 +80,7 @@ loadTableDatas(personData)
                     <div class="col-md-2">
                         <div class="me-3">
                             <div class="dataTables_length" id="DataTables_Table_0_length"><label><select
-                                        @change="reloadTableDatas(state.activetab, state.rows)" v-model="state.rows"
+                                        @change="reloadTableDatas(rows)" v-model="rows"
                                         name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
                                         class="form-select">
                                         <option value="5">5</option>
@@ -175,9 +95,9 @@ loadTableDatas(personData)
                         <div
                             class="dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-3 mb-md-0">
                             <div id="DataTables_Table_0_filter" class="dataTables_filter"><label><input type="search"
-                                        class="form-control" v-model="state.search" @change="reloadTableDatas2(state.search)" placeholder="Search.."
+                                        class="form-control" v-model="search"   placeholder="Search.."
                                         aria-controls="DataTables_Table_0"></label>
-                            </div>{{state.search}}
+                            </div>
                             <div class="dt-buttons"><button
                                     class="dt-button buttons-collection btn btn-label-secondary dropdown-toggle mx-3"
                                     tabindex="0" aria-controls="DataTables_Table_0" type="button" aria-haspopup="true"
@@ -204,7 +124,7 @@ loadTableDatas(personData)
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for=" person in state.returnDatas" class="odd">
+                        <tr v-for=" person in returnDatasG" class="odd">
                             <td class="control" tabindex="5" style="display: none;"></td>
                             <td class="sorting_1">
                                 <div class="d-flex justify-content-start align-items-center">
@@ -243,19 +163,19 @@ loadTableDatas(personData)
                 <div class="row mx-2">
                     <div class="col-sm-12 col-md-6">
                         <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
-                       {{ state.activetab.length }} résultat(s)</div>
+                       {{ personData.length }} résultat(s)</div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
                             <ul class="pagination">
                                 <li class="paginate_button page-item previous" id="DataTables_Table_0_previous"><a
-                                        @click="pageMinus()" aria-controls="DataTables_Table_0" data-dt-idx="0"
+                                        @click="mpage" aria-controls="DataTables_Table_0" data-dt-idx="0"
                                         tabindex="0" class="page-link"><i class="bx bx-chevron-left bx-sm"></i></a></li>
-                                <li v-for="i in state.maxpage" class="paginate_button page-item"><a @click="navigate(i)"
+                                <li v-for="i in maxpage" class="paginate_button page-item"><a @click="navigate(i)"
                                         aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0"
                                         class="page-link">{{ i }}</a></li>
                                 <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a
-                                        @click="pagePlus()" aria-controls="DataTables_Table_0" data-dt-idx="6"
+                                        @click="ppage" aria-controls="DataTables_Table_0" data-dt-idx="6"
                                         tabindex="0" class="page-link"><i class="bx bx-chevron-right bx-sm"></i></a></li>
                             </ul>
                         </div>
