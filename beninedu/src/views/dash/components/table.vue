@@ -31,7 +31,7 @@ inscriptionTable.$patch({
       personData: personDatas
     })
 loadTable(personData.value)
-inscriptionTable.$subscribe((mutation) => {
+inscriptionTable.$subscribe(async (mutation) => {
     console.log(mutation);
     if(search.value != "" && onsearch.value === false) {
         toggleOnsearch()
