@@ -145,7 +145,7 @@ inscriptionTable.$subscribe(async (mutation) => {
                                             class="bx bx-cog bx-xs"></i></span>{{ person.role }}</span></td>
                             <td><span class="fw-semibold">{{ person.age }}</span></td>
                             <td>Manual - Paypal</td>
-                            <td><span class="badge bg-label-warning">Pending</span></td>
+                            <td><span :class="person.age == 9 ? 'badge bg-label-warning' : 'badge bg-label-success' ">Pending</span></td>
                             <td>
                                 <div class="d-inline-block"><button
                                         class="btn btn-sm btn-icon dropdown-toggle hide-arrow"
@@ -164,7 +164,7 @@ inscriptionTable.$subscribe(async (mutation) => {
                 <div class="row mx-2">
                     <div class="col-sm-12 col-md-6">
                         <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
-                       {{ personData.length }} résultat(s)</div>
+                       {{ onsearch ? sort(personData,search).length : personData.length  }} résultat(s)</div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">

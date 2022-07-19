@@ -52,7 +52,7 @@
                             </li>
                             <li class="mb-3">
                                 <span class="fw-bold me-2">Role:</span>
-                                <span>Author</span>
+                                <span>auccun</span>
                             </li>
                         </ul>
                         <div class="d-flex justify-content-center pt-3">
