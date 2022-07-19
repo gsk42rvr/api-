@@ -75,7 +75,6 @@ const getCreditentials = async function (event) {
     </div>
 </template>
 
-<style>
-@import "@/assets/css/style.css";
-@import "@/assets/css/bootstrap.min.css";
+<style scoped>
+
 </style>
