@@ -35,16 +35,16 @@ inscriptionTable.$subscribe(async (mutation) => {
     console.log(mutation);
     if(search.value != "" && onsearch.value === false) {
         toggleOnsearch()
-        loadTable(personData.value)
+        // loadTable(personData.value)
     }
-     if(onsearch.value === true && mutation.events.key == "search") {
-        if (search.value === "") {
-            toggleOnsearch()
-            loadTable(personData.value)
-        }else {
-            loadTable(personData.value)
-        }
-    }
+    //  if(onsearch.value === true && mutation.events.key == "search") {
+    //     if (search.value === "") {
+    //         toggleOnsearch()
+    //         loadTable(personData.value)
+    //     }else {
+    //         loadTable(personData.value)
+    //     }
+    //}
 })
 </script>
 <template>

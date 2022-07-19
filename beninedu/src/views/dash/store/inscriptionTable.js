@@ -29,23 +29,6 @@ const store = defineStore("inscriptionTable", {
     search: "",
   }),
 
-  getters: {
-    maxpage: (state) => {
-      if (state.onsearch === true) {
-        return Math.ceil(sort(state.personData,state.search).length / state.rows);
-      } else {
-        return Math.ceil(state.personData.length / state.rows);
-      }
-    },
-    gettersk: (state) => {
-      if (state.page > state.maxpage) {
-        console.log("popopopopo");
-      }
-    },
-    returnDatasG: (state) => {
-      return state.returnDatas;
-    },
-  },
   actions: {
     loadTable(table) {
       this.returnDatas = [];
@@ -84,6 +67,26 @@ const store = defineStore("inscriptionTable", {
     },
     toggleOnsearch() {
       this.onsearch = !this.onsearch;
+    },
+  },
+  getters: {
+    maxpage: (state) => {
+      if (state.onsearch === true) {
+        return Math.ceil(sort(state.personData,state.search).length / state.rows);
+      } else {
+        return Math.ceil(state.personData.length / state.rows);
+      }
+    },
+    gettersk: (state) => {
+      if (state.page > state.maxpage) {
+        console.log("popopopopo");
+      }
+    },
+    returnDatasG: (state) => {
+      if (state.onsearch == true && state.search != "") {
+        return pagination(sort(state.personData,state.search),state.page,state.rows)
+      }
+      return state.returnDatas;
     },
   },
 });
